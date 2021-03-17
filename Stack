@@ -1,0 +1,110 @@
+#include<iostream>
+#define max 10
+using namespace std;
+
+struct stack{
+    int top;
+    int data[max];
+};
+stack s;
+
+void initial(){s.top=-1;}
+int isEmpty (){if(s.top==-1){return 1;}else{return 0;}}
+int isFull(){
+    if(s.top==max-1){
+            return 1;
+    }else return 0;}
+void push(int d){
+    if(isFull()==1){
+        cout<<"MAAF SUDAH PENUH"<<endl;
+    }else{
+        s.top++;
+        s.data[s.top]=d;
+    }
+}
+void pop(){
+    if(isEmpty()==1){
+        cout<<"MAAF KOSONG"<<endl;
+    }else{
+        cout<<"Data yg dihapus: "<<s.data[s.top]<<endl;
+        s.top--;
+    }
+
+}
+void printS(){
+    if(isEmpty()==1){
+        cout<<"Maaf Kosong"<<endl;
+    }else{
+        for(int i=s.top;i>=0;i--){
+            cout<<s.data[i]<<endl;
+        }
+    }
+}
+void del(){
+    s.top=-1;
+    cout<<"DELETE SUCCES"<<endl;
+}
+void peak(){
+    if(isEmpty()==1){
+        cout<<"KOSONG"<<endl;
+    }else{
+        cout<<s.data[s.top]<<endl;
+    }
+
+}
+int main (){
+    initial();
+    int p,x;
+    char c;
+    do{
+    system ("cls");
+    cout<<"=========="<<endl;
+    cout<<"1.push\n2.pop\n3.print\n4.peak\n5.del\n6.exit"<<endl;
+    cout<<"=========="<<endl;
+    cin>>p;
+    cout<<"=========="<<endl;
+        switch(p){
+            case 1:
+                cout<<"push: ";
+                cin>>x;
+                push(x);
+                cout<<"=========="<<endl;
+                cout<<"ulang [y/t]? ";
+                cin>>c;
+                break;
+            case 2:
+                pop();
+                cout<<"=========="<<endl;
+                cout<<"ulang [y/t]? ";
+                cin>>c;
+                break;
+            case 3:
+                printS();
+                cout<<"=========="<<endl;
+                cout<<"ulang [y/t]? ";
+                cin>>c;
+                break;
+            case 4:
+                peak();
+                cout<<"=========="<<endl;
+                cout<<"ulang [y/t]? ";
+                cin>>c;
+                break;
+            case 5:
+                del();
+                cout<<"=========="<<endl;
+                cout<<"ulang [y/t]? ";
+                cin>>c;
+                break;
+            case 6:
+                return 'T';
+                break;
+            default:
+                cout<<"INVALID INPUT"<<endl;
+        }
+
+    }while(c=='y'||c=='Y');
+
+ return 0;
+}
+
