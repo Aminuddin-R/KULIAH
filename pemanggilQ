@@ -1,0 +1,47 @@
+int main(){
+initial();
+ int x;
+ char p;
+ do{
+ system("cls");
+ cout<<"1.enQ\n2.deQ\n3.print\n4.del\n5.exit"<<endl;
+ cout<<"====="<<endl;
+ cout<<"x: ";
+ cin>>x;
+ cout<<"====="<<endl;
+    switch(x){
+    case 1:
+        cout<<"====="<<endl;
+        cout<<"+ : ";
+        cin>>x;
+        enqueue(x);
+        cout<<"ulang [y/t]? ";
+        cin>>p;
+        break;
+    case 2:
+        cout<<"====="<<endl;
+        dequeue();
+        cout<<"ulang [y/t]? ";
+        cin>>p;
+        break;
+    case 3:
+        cout<<"====="<<endl;
+        printQ();
+        cout<<"ulang [y/t]? ";
+        cin>>p;
+        break;
+    case 4:
+        cout<<"====="<<endl;
+        del();
+        cout<<"ulang [y/t]? ";
+        cin>>p;
+    break;
+    case 5:
+        cout<<"====="<<endl;
+        return 'T';
+    default:
+        cout<<"INVALID INPUT";
+
+    }
+ }while(p=='y'||p=='Y');
+ }
