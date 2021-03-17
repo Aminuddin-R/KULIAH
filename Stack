@@ -9,11 +9,8 @@ struct stack{
 stack s;
 
 void initial(){s.top=-1;}
-int isEmpty (){if(s.top==-1){return 1;}else{return 0;}}
-int isFull(){
-    if(s.top==max-1){
-            return 1;
-    }else return 0;}
+int isEmpty (){(s.top==-1)?true:false;}
+int isFull(){(s.top==max-1)?true:false;}
 void push(int d){
     if(isFull()==1){
         cout<<"MAAF SUDAH PENUH"<<endl;
